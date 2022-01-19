@@ -1,5 +1,5 @@
 // Write your helper functions here!
-require('isomorphic-fetch');
+/*require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
@@ -16,7 +16,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    */
 }
 
-function validateInput(testInput) {
+/*function validateInput(testInput) {
   
     if (testInput.value === "" ) {
          window.alert("All fields are required!");
@@ -26,10 +26,14 @@ function validateInput(testInput) {
        window.alert("Enter string for pilot and co-pilot names and numbers for fuel and cargomass");
      }
    
-}
+}*/
 
-function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
-     
+/*function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
+     window.addEventListener("load", function(){
+       
+
+
+     });
       validateInput(pilot)
       validateInput(copilot)
       validateInput(fuelLevel)
@@ -64,7 +68,7 @@ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
       }
    
 }
-
+*/
 /*async function myFetch() {
     let planetsReturned;
 
@@ -78,7 +82,7 @@ function pickPlanet(planets) {
 }
 */
 //module.exports.addDestinationInfo = addDestinationInfo;
-module.exports.validateInput = validateInput;
-module.exports.formSubmission = formSubmission;
+//module.exports.validateInput = validateInput;
+//module.exports.formSubmission = formSubmission;
 //module.exports.pickPlanet = pickPlanet; 
 //module.exports.myFetch = myFetch;

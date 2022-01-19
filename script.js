@@ -1,5 +1,5 @@
 // Write your JavaScript code here!
-helperFunctions = require('./scriptHelper.js');
+//helperFunctions = require('./scriptHelper.js');
 
 window.addEventListener("load", function() {
    
@@ -41,16 +41,16 @@ window.addEventListener("load", function() {
    form.addEventListener("submit", function (event) {
 
       event.preventDefault();
-      helperFunctions.formSubmission(document, pilot, copilot, fuelLevel, cargoMass)
+      
       /*helperFunctions.validateInput(copilot)
       helperFunctions.validateInput(fuelLevel)
       helperFunctions.validateInput(cargoMass)*/
       
-      /*if (pilot.value === "" || copilot.value === "" || cargoMass.value === "" || fuelLevel.value === "") {
+      if (pilot.value === "" || copilot.value === "" || cargoMass.value === "" || fuelLevel.value === "") {
          alert("All fields are required!");
-      }*/
+      }
       
-     /* if (isNaN(pilotName.value) || isNaN(copilotName.value)){
+     if (isNaN(pilotName.value) || isNaN(copilotName.value)){
         alert("Pilot & Co-pilot need to be human names, not integers!");
         event.preventDefault();
      }
@@ -60,11 +60,11 @@ window.addEventListener("load", function() {
      //validate cargo and fuel inputs
       if (isNaN(cargoMass.value) || isNaN(fuelLevel.value)) {
          alert("Enter a number in cargo mass and fuel level.");
-      }*/
+      }
       
       
       //validate fuel conditions. And update DOM
-      /*if(fuelLevel.value < 10000){
+      if(fuelLevel.value < 10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle not ready for launch.`
          document.getElementById("fuelStatus").innerHTML = `There is not enough fuel for the journey.`
          document.getElementById("launchStatus").style.color = "red"
@@ -90,7 +90,6 @@ window.addEventListener("load", function() {
          document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilotName.value} is ready for launch`
          document.getElementById("faultyItems").style.visibility = "visible"
       }
-    */
 
    });
 });
