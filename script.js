@@ -1,4 +1,5 @@
 // Write your JavaScript code here!
+helperFunctions = require('scriptHelper.js');
 
 window.addEventListener("load", function() {
    
@@ -40,10 +41,10 @@ window.addEventListener("load", function() {
    form.addEventListener("submit", function (event) {
 
       event.preventDefault();
-      validateInput(pilot)
-      validateInput(copilot)
-      validateInput(fuelLevel)
-      validateInput(cargoMass)
+      helperFunctions.validateInput(pilot)
+      helperFunctions.validateInput(copilot)
+      helperFunctions.validateInput(fuelLevel)
+      helperFunctions.validateInput(cargoMass)
       
       /*if (pilot.value === "" || copilot.value === "" || cargoMass.value === "" || fuelLevel.value === "") {
          alert("All fields are required!");
