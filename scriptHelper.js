@@ -19,11 +19,11 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 function validateInput(testInput) {
   
     if (testInput.value === "" ) {
-         alert("All fields are required!");
+         window.alert("All fields are required!");
       }
     if (isNaN(testInput.value)){
 
-        alert("Enter string for pilot and co-pilot names and numbers for fuel and cargomass");
+       window.alert("Enter string for pilot and co-pilot names and numbers for fuel and cargomass");
      }
    
 }
