@@ -28,7 +28,7 @@ function validateInput(testInput) {
    
 }
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
      
       validateInput(pilot)
       validateInput(copilot)
@@ -77,8 +77,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 function pickPlanet(planets) {
 }
 */
-module.exports.addDestinationInfo = addDestinationInfo;
+//module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
 module.exports.formSubmission = formSubmission;
-module.exports.pickPlanet = pickPlanet; 
-module.exports.myFetch = myFetch;
+//module.exports.pickPlanet = pickPlanet; 
+//module.exports.myFetch = myFetch;

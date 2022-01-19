@@ -41,10 +41,10 @@ window.addEventListener("load", function() {
    form.addEventListener("submit", function (event) {
 
       event.preventDefault();
-      helperFunctions.validateInput(pilot)
-      helperFunctions.validateInput(copilot)
+      helperFunctions.formSubmission(document, pilot, copilot, fuelLevel, cargoMass)
+      /*helperFunctions.validateInput(copilot)
       helperFunctions.validateInput(fuelLevel)
-      helperFunctions.validateInput(cargoMass)
+      helperFunctions.validateInput(cargoMass)*/
       
       /*if (pilot.value === "" || copilot.value === "" || cargoMass.value === "" || fuelLevel.value === "") {
          alert("All fields are required!");
@@ -64,7 +64,7 @@ window.addEventListener("load", function() {
       
       
       //validate fuel conditions. And update DOM
-      if(fuelLevel.value < 10000){
+      /*if(fuelLevel.value < 10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle not ready for launch.`
          document.getElementById("fuelStatus").innerHTML = `There is not enough fuel for the journey.`
          document.getElementById("launchStatus").style.color = "red"
@@ -90,7 +90,7 @@ window.addEventListener("load", function() {
          document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilotName.value} is ready for launch`
          document.getElementById("faultyItems").style.visibility = "visible"
       }
-
+    */
 
    });
 });
