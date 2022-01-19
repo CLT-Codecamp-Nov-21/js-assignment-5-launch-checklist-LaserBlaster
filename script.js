@@ -40,11 +40,16 @@ window.addEventListener("load", function() {
    form.addEventListener("submit", function (event) {
 
       event.preventDefault();
-      if (pilot.value === "" || copilot.value === "" || cargoMass.value === "" || fuelLevel.value === "") {
-         alert("All fields are required!");
-      }
+      validateInput(pilot)
+      validateInput(copilot)
+      validateInput(fuelLevel)
+      validateInput(cargoMass)
       
-      if (isNaN(pilotName.value) || isNaN(copilotName.value)){
+      /*if (pilot.value === "" || copilot.value === "" || cargoMass.value === "" || fuelLevel.value === "") {
+         alert("All fields are required!");
+      }*/
+      
+     /* if (isNaN(pilotName.value) || isNaN(copilotName.value)){
         alert("Pilot & Co-pilot need to be human names, not integers!");
         event.preventDefault();
      }
@@ -54,7 +59,9 @@ window.addEventListener("load", function() {
      //validate cargo and fuel inputs
       if (isNaN(cargoMass.value) || isNaN(fuelLevel.value)) {
          alert("Enter a number in cargo mass and fuel level.");
-      } 
+      }*/
+      
+      
       //validate fuel conditions. And update DOM
       if(fuelLevel.value < 10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle not ready for launch.`

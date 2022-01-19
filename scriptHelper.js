@@ -16,12 +16,20 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    */
 }
 
-/* function validateInput(testInput) {
+function validateInput(testInput) {
+  
+    if (testInput.value === "" ) {
+         alert("All fields are required!");
+      }
+    if (isNaN(testInput.value)){
 
+        alert("Enter string for pilot and co-pilot names and numbers for fuel and cargomass");
+        event.preventDefault();
+     }
    
 }
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+/* function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    
 }
 
