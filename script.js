@@ -43,24 +43,35 @@ window.addEventListener("load", function() {
       if (pilot.value === "" || copilot.value === "" || cargoMass.value === "" || fuelLevel.value === "") {
          alert("All fields are required!");
       }
+      
+      if (isNaN(pilotName.value) || isNaN(copilotName.value)){
+        alert("Pilot & Co-pilot need to be human names, not integers!");
+        event.preventDefault();
+     }
+
+
+
      //validate cargo and fuel inputs
       if (isNaN(cargoMass.value) || isNaN(fuelLevel.value)) {
          alert("Enter a number in cargo mass and fuel level.");
       } 
-      //validate fuel conditions
+      //validate fuel conditions. And update DOM
       if(fuelLevel.value < 10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle not ready for launch.`
          document.getElementById("fuelStatus").innerHTML = `There is not enough fuel for the journey.`
          document.getElementById("launchStatus").style.color = "red"
          document.getElementById("faultyItems").style.visibility = "visible"
       }
-      // validate cargo conditions
+      // validate cargo conditions. And update DOM
       if(cargoMass.value > 10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle not ready for launch.`
          document.getElementById("cargoStatus").innerHTML = `There is too much mass for the shuttle to take off.`;
          document.getElementById("launchStatus").style.color = "red"
          document.getElementById("faultyItems").style.visibility = "visible"
       }
+      
+      
+      // validate fuel and cargo conditions. And update DOM
       if(fuelLevelInput.value > 10000 && cargoMassInput.value <10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle is ready for launch.`
          document.getElementById("launchStatus").style.color = "green"
