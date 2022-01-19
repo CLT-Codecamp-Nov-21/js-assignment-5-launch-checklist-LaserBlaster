@@ -1,5 +1,5 @@
 // Write your JavaScript code here!
-helperFunctions = require('scriptHelper.js');
+helperFunctions = require('./scriptHelper.js');
 
 window.addEventListener("load", function() {
    
