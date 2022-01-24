@@ -23,11 +23,11 @@ function validateInput(testInput) {
     if (testInput.value === "" ) {
          return "Empty"
       }
-   if(typedef(testInput.value) == 'Number'){
+   if(typeof(testInput.value) == 'Number'){
 
       return "Is a Number"
    }
-   if(typedef(testInput.value) != 'Number'){
+   if(typeof(testInput.value) != 'Number'){
 
       return "Not a Number"
    }
