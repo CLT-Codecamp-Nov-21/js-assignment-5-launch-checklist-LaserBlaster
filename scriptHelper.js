@@ -126,7 +126,7 @@ async function myFetch() {
             `
          
       });
-
+   });
 
     return planetsReturned;
 }
@@ -135,13 +135,9 @@ async function myFetch() {
 }
 */
 
-try{
+
 //module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
 module.exports.formSubmission = formSubmission;
 //module.exports.pickPlanet = pickPlanet; 
 module.exports.myFetch = myFetch;
-}
-catch(e){
-
-}
