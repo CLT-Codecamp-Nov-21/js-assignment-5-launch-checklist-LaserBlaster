@@ -37,8 +37,18 @@ window.addEventListener("load", function() {
       if (helperFunctions.validateInput(cargoMass.value) === "Not a Number" || helperFunctions.validateInput(fuelLevel.value) === "Not a Number") {
          alert("Enter a number in cargo mass and fuel level.");
       }
+      
+      launchStatus = document.getElementById("launchStatus")
+      fuelStatus = document.getElementById("fuelStatus")
+      faultyItems = document.getElementById("faultyItems")
+      cargoStatus = document.getElementById("cargoStatus")
+      pilotStatus = document.getElementById("pilotStatus")
+      copilotStatus = document.getElementById("copilotStatus")
+      
+      document_list = [launchStatus, fuelStatus, faultyItems, cargoStatus, pilotStatus, copilotStatus ]
 
-      helperFunctions.formSubmission(document, pilot, copilot, fuelLevel, cargoMass);
+
+      helperFunctions.formSubmission(document_list, pilot, copilot, fuelLevel, cargoMass);
 
       myFetch();
       

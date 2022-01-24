@@ -44,32 +44,32 @@ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
       //validate fuel level condition
 
      if(fuelLevel.value < 10000){
-         document.getElementById("launchStatus").innerHTML = `Shuttle Not ready for Launch.`
-         document.getElementById("fuelStatus").innerHTML = `Fuel level too low for launch.`
-         document.getElementById("launchStatus").style.color = "rgb(199, 37, 78)"
-         document.getElementById("faultyItems").style.visibility = "visible"
+         document[0].innerHTML = `Shuttle Not ready for Launch.`;
+         document[1].innerHTML = `Fuel level too low for launch.`;
+         document[0].style.color = "rgb(199, 37, 78)";
+         document[2].style.visibility = "visible";
       }
       
       // validate cargo conditions. And update DOM
       
       if(cargoLevel.value > 10000){
-         document.getElementById("launchStatus").innerHTML = `Shuttle Not ready for Launch.`
-         document.getElementById("cargoStatus").innerHTML = `Cargo mass too heavy for launch.`;
-         document.getElementById("launchStatus").style.color = "rgb(199, 37, 78)"
-         document.getElementById("faultyItems").style.visibility = "visible"
+         document[0].innerHTML = `Shuttle Not ready for Launch.`;
+         document[3].innerHTML = `Cargo mass too heavy for launch.`;
+         document[0].style.color = "rgb(199, 37, 78)";
+         document[2].style.visibility = "visible";
       }
       
       
       // validate fuel and cargo conditions. And update DOM
       if(fuelLevel.value > 10000 && cargoLevel.value <10000){
-         document.getElementById("launchStatus").innerHTML = `Shuttle is Ready for Launch.`
-         document.getElementById("launchStatus").style.color = "rgb(65, 159, 106)"
+         document[0].innerHTML = `Shuttle is Ready for Launch.`;
+         document[0].style.color = "rgb(65, 159, 106)";
       }
       // update name and status
       if (pilot.value && copilot.value){
-         document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot.value} is ready for launch`
-         document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot.value} is ready for launch`
-         document.getElementById("faultyItems").style.visibility = "visible"
+         document[4].innerHTML = `Pilot ${pilot.value} is ready for launch`;
+         document[5].innerHTML = `Co-pilot ${copilot.value} is ready for launch`;
+         document[2].style.visibility = "visible";
       }
    
 }
