@@ -61,10 +61,12 @@ window.addEventListener("load", function() {
       if (isNaN(cargoMass.value) || isNaN(fuelLevel.value)) {
          alert("Enter a number in cargo mass and fuel level.");
       }
+
+      formSubmission(document, pilot.value, copilot.value, fuelLevel.value, cargoMass.value)
       
       
       //validate fuel conditions. And update DOM
-      if(fuelLevel.value < 10000){
+      /*if(fuelLevel.value < 10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle not ready for launch.`
          document.getElementById("fuelStatus").innerHTML = `There is not enough fuel for the journey.`
          document.getElementById("launchStatus").style.color = "red"
@@ -89,7 +91,7 @@ window.addEventListener("load", function() {
          document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName.value} is ready for launch`
          document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilotName.value} is ready for launch`
          document.getElementById("faultyItems").style.visibility = "visible"
-      }
+      }*/
 
    });
 });

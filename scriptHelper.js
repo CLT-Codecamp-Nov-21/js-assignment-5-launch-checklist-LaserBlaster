@@ -3,6 +3,8 @@
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
+
+   
    /*
                 <h2>Mission Destination</h2>
                 <ol>
@@ -19,7 +21,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 /*function validateInput(testInput) {
   
     if (testInput.value === "" ) {
-         window.alert("All fields are required!");
+         return "Empty"
       }
     if (isNaN(testInput.value)){
 
@@ -28,25 +30,20 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    
 }*/
 
-/*function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
-     window.addEventListener("load", function(){
-       
-
-
-     });
-      validateInput(pilot)
-      validateInput(copilot)
-      validateInput(fuelLevel)
-      validateInput(cargoLevel)
+function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
        
     
+      //validate fuellevel condition
+
      if(fuelLevel.value < 10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle not ready for launch.`
          document.getElementById("fuelStatus").innerHTML = `There is not enough fuel for the journey.`
          document.getElementById("launchStatus").style.color = "red"
          document.getElementById("faultyItems").style.visibility = "visible"
       }
+      
       // validate cargo conditions. And update DOM
+      
       if(cargoLevel.value > 10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle not ready for launch.`
          document.getElementById("cargoStatus").innerHTML = `There is too much mass for the shuttle to take off.`;
@@ -68,7 +65,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
       }
    
 }
-*/
+
 /*async function myFetch() {
     let planetsReturned;
 
@@ -83,6 +80,6 @@ function pickPlanet(planets) {
 */
 //module.exports.addDestinationInfo = addDestinationInfo;
 //module.exports.validateInput = validateInput;
-//module.exports.formSubmission = formSubmission;
+module.exports.formSubmission = formSubmission;
 //module.exports.pickPlanet = pickPlanet; 
 //module.exports.myFetch = myFetch;
