@@ -38,7 +38,7 @@ window.addEventListener("load", function() {
          alert("Enter a number in cargo mass and fuel level.");
       }
 
-      formSubmission(document, pilot, copilot, fuelLevel, cargoMass);
+      helperFunctions.formSubmission(document, pilot, copilot, fuelLevel, cargoMass);
 
       myFetch();
       
