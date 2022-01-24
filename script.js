@@ -1,4 +1,46 @@
 // Write your JavaScript code here!
+/*try{
+helper = require('./scriptHelper.js')
+}catch(e){
+
+}*/
+
+import { addDestinationInfo, validateInput, formSubmission, pickPlanet, myFetch } from './scriptHelper.js';
+window.addEventListener("load", function() {
+   let listedPlanets;
+   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+       
+   let listedPlanetsResponse = myFetch();
+           listedPlanetsResponse.then(function (response) {response.json().then(function (listedPlanets) {          
+               let index = pickPlanet(listedPlanets);
+                   console.log(myFetch());
+                   //console.log(typeof jsonObject);
+                   //console.log(listedPlanets); 
+               let name = listedPlanets[index].name
+               let diameter = listedPlanets[index].diameter
+               let star = listedPlanets[index].star
+               let distance = listedPlanets[index].distance
+               let moons = listedPlanets[index].moons
+               let imageUrl = listedPlanets[index].image 
+               addDestinationInfo(name, diameter, star, distance, moons, imageUrl);
+       })
+   });
+
+       
+});
+
+//pickPlanet();
+                           
+validateInput();
+
+
+
+
+
+
+/*
+
+
 helperFunctions = require('./scriptHelper.js');
 
 window.addEventListener("load", function() {
@@ -20,6 +62,8 @@ window.addEventListener("load", function() {
       helperFunctions.validateInput(copilot.value)
       helperFunctions.validateInput(fuelLevel.value)
       helperFunctions.validateInput(cargoMass.value)*/
+
+      /*
       
       if(helperFunctions.validateInput(pilot.value) === "Empty" || helperFunctions.validateInput(copilot.value) === "Empty"  
       || helperFunctions.validateInput(fuelLevel.value) === "Empty"  || helperFunctions.validateInput(cargoMass.value) === "Empty"  === "") {
@@ -30,8 +74,6 @@ window.addEventListener("load", function() {
         alert("Pilot & Co-pilot need to be human names, not integers!");
         event.preventDefault();
      }
-
-
 
      //validate cargo and fuel inputs
       if (helperFunctions.validateInput(cargoMass.value) === "Not a Number" || helperFunctions.validateInput(fuelLevel.value) === "Not a Number") {
@@ -81,5 +123,5 @@ window.addEventListener("load", function() {
          document.getElementById("faultyItems").style.visibility = "visible"
       }*/
 
-   });
-});
+ //  });
+//});
