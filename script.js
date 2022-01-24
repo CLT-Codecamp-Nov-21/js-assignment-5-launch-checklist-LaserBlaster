@@ -1,5 +1,5 @@
 // Write your JavaScript code here!
-helperFunctions = require('scriptHelper.js');
+helperFunctions = require('./scriptHelper.js');
 
 window.addEventListener("load", function() {
    
@@ -38,12 +38,12 @@ window.addEventListener("load", function() {
          alert("Enter a number in cargo mass and fuel level.");
       }
       
-      launchStatus = document.getElementById("launchStatus")
-      fuelStatus = document.getElementById("fuelStatus")
-      faultyItems = document.getElementById("faultyItems")
-      cargoStatus = document.getElementById("cargoStatus")
-      pilotStatus = document.getElementById("pilotStatus")
-      copilotStatus = document.getElementById("copilotStatus")
+      launchStatus = document.getElementById("launchStatus");
+      fuelStatus = document.getElementById("fuelStatus");
+      faultyItems = document.getElementById("faultyItems");
+      cargoStatus = document.getElementById("cargoStatus");
+      pilotStatus = document.getElementById("pilotStatus");
+      copilotStatus = document.getElementById("copilotStatus");
       
       document_list = [ launchStatus, fuelStatus, faultyItems, cargoStatus, pilotStatus, copilotStatus ]
 
