@@ -5,7 +5,7 @@ helper = require('./scriptHelper.js')
 
 }*/
 
-import { addDestinationInfo, validateInput, formSubmission, pickPlanet, myFetch } from './scriptHelper.js';
+//import { addDestinationInfo, validateInput, formSubmission, pickPlanet, myFetch } from './scriptHelper.js';
 window.addEventListener("load", function() {
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()

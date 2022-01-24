@@ -5,7 +5,7 @@ require('isomorphic-fetch');
 
 }*/
 
-export { addDestinationInfo, validateInput, formSubmission, pickPlanet, myFetch  };
+//export { addDestinationInfo, validateInput, formSubmission, pickPlanet, myFetch  };
 
 function addDestinationInfo(name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
@@ -143,7 +143,7 @@ async function pickPlanet (planetaryData) {
   // });
 }
 
-/*try{
+try{
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
 module.exports.formSubmission = formSubmission;
@@ -151,6 +151,6 @@ module.exports.pickPlanet = pickPlanet;
 module.exports.myFetch = myFetch;
 }catch(e){
 
-}*/
+}
 
 
