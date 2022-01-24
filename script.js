@@ -1,34 +1,7 @@
 // Write your JavaScript code here!
-//helperFunctions = require('./scriptHelper.js');
+helperFunctions = require('./scriptHelper.js');
 
 window.addEventListener("load", function() {
-   
-    // Fetch JSON data and display
-    let listedPlanetsResponse = fetch("https://handlers.education.launchcode.org/static/planets.json")
-
-    listedPlanetsResponse.then(function(result){
-        let listedPlanets = result
-      listedPlanets.json().then(function(json){
-         const container = document.getElementById("missionTarget");
-         
-            container.innerHTML += `
-            <div class="planetInfo">
-               <h1> Mission Destination </h1>
-               <ol>
-                  <li>Name: ${json[3].name}</li>
-                  <li>Diameter: ${json[3].diameter}</li>
-                  <li>Star: ${json[3].star}</li>
-                  <li>Distance: ${json[3].distance}</li>
-                  <li>Moons: ${json[3].moons}</li>
-               </ol>
-            </div>
-            <div>
-               <img class="image" src="${json[3].image}">
-            </div>
-            `
-         
-      })
-   })
    
 
    // Select all fields from form
@@ -42,15 +15,18 @@ window.addEventListener("load", function() {
 
       event.preventDefault();
       
-      /*helperFunctions.validateInput(copilot)
-      helperFunctions.validateInput(fuelLevel)
-      helperFunctions.validateInput(cargoMass)*/
       
-      if (pilot.value === "" || copilot.value === "" || cargoMass.value === "" || fuelLevel.value === "") {
+      /*helperFunctions.validateInput(pilot.value)
+      helperFunctions.validateInput(copilot.value)
+      helperFunctions.validateInput(fuelLevel.value)
+      helperFunctions.validateInput(cargoMass.value)*/
+      
+      if(helperFunctions.validateInput(pilot.value) === "Empty" || helperFunctions.validateInput(copilot.value) === "Empty"  
+      || helperFunctions.validateInput(fuelLevel.value) === "Empty"  || helperFunctions.validateInput(cargoMass.value) === "Empty"  === "") {
          alert("All fields are required!");
       }
       
-     if (isNaN(pilotName.value) || isNaN(copilotName.value)){
+     if (helperFunctions.validateInput(pilot.value) === "Is a Number" || helperFunctions.validateInput(copilot.value) === "Is a Number"){
         alert("Pilot & Co-pilot need to be human names, not integers!");
         event.preventDefault();
      }
@@ -58,11 +34,13 @@ window.addEventListener("load", function() {
 
 
      //validate cargo and fuel inputs
-      if (isNaN(cargoMass.value) || isNaN(fuelLevel.value)) {
+      if (helperFunctions.validateInput(cargoMass.value) === "Not a Number" || helperFunctions.validateInput(fuelLevel.value) === "Not a Number") {
          alert("Enter a number in cargo mass and fuel level.");
       }
 
-      formSubmission(document, pilot.value, copilot.value, fuelLevel.value, cargoMass.value)
+      formSubmission(document, pilot, copilot, fuelLevel, cargoMass);
+
+      myFetch();
       
       
       //validate fuel conditions. And update DOM

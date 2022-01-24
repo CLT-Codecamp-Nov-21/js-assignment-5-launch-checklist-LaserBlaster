@@ -1,7 +1,7 @@
 // Write your helper functions here!
-/*require('isomorphic-fetch');
+require('isomorphic-fetch');
 
-function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
+//function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
 
    
@@ -18,17 +18,25 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    */
 //}
 
-/*function validateInput(testInput) {
+function validateInput(testInput) {
   
     if (testInput.value === "" ) {
          return "Empty"
       }
-    if (isNaN(testInput.value)){
+   if(typedef(testInput.value) == 'Number'){
 
-       window.alert("Enter string for pilot and co-pilot names and numbers for fuel and cargomass");
-     }
+      return "Is a Number"
+   }
+   if(typedef(testInput.value) != 'Number'){
+
+      return "Not a Number"
+   }
+    //if (isNaN(testInput.value)){
+
+   //    window.alert("Enter string for pilot and co-pilot names and numbers for fuel and cargomass");
+   //  }
    
-}*/
+}
 
 function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
        
@@ -66,20 +74,74 @@ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
    
 }
 
-/*async function myFetch() {
+async function myFetch() {
+
+   /* // Fetch JSON data and display
+    let listedPlanetsResponse = fetch("https://handlers.education.launchcode.org/static/planets.json")
+
+    listedPlanetsResponse.then(function(result){
+        let listedPlanets = result
+      listedPlanets.json().then(function(json){
+         const container = document.getElementById("missionTarget");
+         
+            container.innerHTML += `
+            <div class="planetInfo">
+               <h1> Mission Destination </h1>
+               <ol>
+                  <li>Name: ${json[3].name}</li>
+                  <li>Diameter: ${json[3].diameter}</li>
+                  <li>Star: ${json[3].star}</li>
+                  <li>Distance: ${json[3].distance}</li>
+                  <li>Moons: ${json[3].moons}</li>
+               </ol>
+            </div>
+            <div>
+               <img class="image" src="${json[3].image}">
+            </div>
+            `
+         
+      })
+   }) */
     let planetsReturned;
 
-    planetsReturned = await fetch().then( function(response) {
-        });
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
+        
+         response.json().then(function(json){
+         const container = document.getElementById("missionTarget");
+         
+            container.innerHTML += `
+            <div class="planetInfo">
+               <h1> Mission Destination </h1>
+               <ol>
+                  <li>Name: ${json[3].name}</li>
+                  <li>Diameter: ${json[3].diameter}</li>
+                  <li>Star: ${json[3].star}</li>
+                  <li>Distance: ${json[3].distance}</li>
+                  <li>Moons: ${json[3].moons}</li>
+               </ol>
+            </div>
+            <div>
+               <img class="image" src="${json[3].image}">
+            </div>
+            `
+         
+      });
+
 
     return planetsReturned;
 }
 
-function pickPlanet(planets) {
+/*function pickPlanet(planets) {
 }
 */
+
+try{
 //module.exports.addDestinationInfo = addDestinationInfo;
-//module.exports.validateInput = validateInput;
+module.exports.validateInput = validateInput;
 module.exports.formSubmission = formSubmission;
 //module.exports.pickPlanet = pickPlanet; 
-//module.exports.myFetch = myFetch;
+module.exports.myFetch = myFetch;
+}
+catch(e){
+
+}
