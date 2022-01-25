@@ -52,8 +52,8 @@ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
       }
       // update name and status
       if (pilot.value && copilot.value){
-         document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName.value} is ready for launch`
-         document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilotName.value} is ready for launch`
+         document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot.value} is ready for launch`
+         document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot.value} is ready for launch`
          document.getElementById("faultyItems").style.visibility = "visible"
    
 }
