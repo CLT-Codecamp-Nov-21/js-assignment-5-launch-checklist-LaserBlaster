@@ -56,7 +56,7 @@ window.addEventListener("load", function() {
       //document_list = [ launchStatus, fuelStatus, faultyItems, cargoStatus, pilotStatus, copilotStatus ]
 
 
-      formSubmission(document, pilot, copilot, fuelLevel, cargoMass);
+      formSubmission(event, pilot, copilot, fuelLevel, cargoMass);
 });
 
   //validateInput(document);

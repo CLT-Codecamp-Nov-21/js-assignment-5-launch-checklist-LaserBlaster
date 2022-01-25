@@ -46,7 +46,7 @@ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
       
       
       // validate fuel and cargo conditions. And update DOM
-      if(fuelLevel.value > 10000 && cargoLevel.value <10000){
+      if(fuelLevel.value >= 10000 && cargoLevel.value <= 10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle is ready for launch.`
          document.getElementById("launchStatus").style.color = "green"
       }
