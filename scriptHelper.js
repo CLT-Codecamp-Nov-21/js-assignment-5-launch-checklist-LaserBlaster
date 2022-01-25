@@ -37,7 +37,7 @@ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
          document.getElementById("faultyItems").style.visibility = "visible"
       }
       // validate cargo conditions. And update DOM
-      if(cargoMass.value > 10000){
+      if(cargoLevel.value > 10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle not ready for launch.`
          document.getElementById("cargoStatus").innerHTML = `There is too much mass for the shuttle to take off.`;
          document.getElementById("launchStatus").style.color = "red"
@@ -46,7 +46,7 @@ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
       
       
       // validate fuel and cargo conditions. And update DOM
-      if(fuelLevelInput.value > 10000 && cargoMassInput.value <10000){
+      if(fuelLevel.value > 10000 && cargoLevel.value <10000){
          document.getElementById("launchStatus").innerHTML = `Shuttle is ready for launch.`
          document.getElementById("launchStatus").style.color = "green"
       }
