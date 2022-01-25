@@ -75,11 +75,11 @@ function validateInput(testInput) {
                    return "Empty";
                //emptyFields = "All fields must be filled in.\n";
                }
-               if(typeof(testInput) == "Number"){
-                   return "Is a Number"
-               }
-               if(typeof(testInput) != "Number"){
+               if(isNaN(testInput)){
                    return "Not a Number"
+               }
+               if(!isNan(testInput)){
+                   return "Is a Number"
                }
    
                /*if (pilotName.match(/[0-9]/g) != null || copilotName.match(/[0-9]/g) != null) {
