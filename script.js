@@ -17,7 +17,7 @@ window.addEventListener("load", function() {
       const planet = pickPlanet(listedPlanets);
       //console.log(planet);
        addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
- 
+   });
       
    // Select all fields from form
    let form = document.querySelector('form');
