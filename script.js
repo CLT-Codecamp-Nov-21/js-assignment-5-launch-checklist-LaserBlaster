@@ -11,27 +11,62 @@ window.addEventListener("load", function() {
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
        
    let listedPlanetsResponse = myFetch();
-           listedPlanetsResponse.then(function (response) {response.json().then(function (listedPlanets) {          
-               let index = pickPlanet(listedPlanets);
-                   console.log(myFetch());
-                   //console.log(typeof jsonObject);
-                   //console.log(listedPlanets); 
-               let name = listedPlanets[index].name
-               let diameter = listedPlanets[index].diameter
-               let star = listedPlanets[index].star
-               let distance = listedPlanets[index].distance
-               let moons = listedPlanets[index].moons
-               let imageUrl = listedPlanets[index].image 
-               addDestinationInfo(name, diameter, star, distance, moons, imageUrl);
-       })
-   });
 
-       
+   listedPlanetsResponse.then(function (result) {
+      listedPlanets = result;
+      const planet = pickPlanet(listedPlanets);
+      //console.log(planet);
+       addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
+ 
+      
+   // Select all fields from form
+   let form = document.querySelector('form');
+   let pilot = document.querySelector('input[name="pilotName"]');
+   let copilot = document.querySelector('input[name="copilotName"]');
+   let fuelLevel = document.querySelector('input[name="fuelLevel"]');
+   let cargoMass = document.querySelector('input[name="cargoMass"]');
+
+   form.addEventListener("submit", function (event) {
+
+      event.preventDefault();
+   
+      
+      if(helperFunctions.validateInput(pilot.value) === "Empty" || helperFunctions.validateInput(copilot.value) === "Empty"  
+      || helperFunctions.validateInput(fuelLevel.value) === "Empty"  || helperFunctions.validateInput(cargoMass.value) === "Empty"  === "") {
+         alert("All fields are required!");
+      }
+      
+     if (helperFunctions.validateInput(pilot.value) === "Is a Number" || helperFunctions.validateInput(copilot.value) === "Is a Number"){
+        alert("Pilot & Co-pilot need to be human names, not integers!");
+        event.preventDefault();
+     }
+
+     //validate cargo and fuel inputs
+      if (helperFunctions.validateInput(cargoMass.value) === "Not a Number" || helperFunctions.validateInput(fuelLevel.value) === "Not a Number") {
+         alert("Enter a number in cargo mass and fuel level.");
+      }
+      
+      /*launchStatus = document.getElementById("launchStatus");
+     // fuelStatus = document.getElementById("fuelStatus");
+     // faultyItems = document.getElementById("faultyItems");
+     // cargoStatus = document.getElementById("cargoStatus");
+     // pilotStatus = document.getElementById("pilotStatus");
+     // copilotStatus = document.getElementById("copilotStatus");*/
+      
+      //document_list = [ launchStatus, fuelStatus, faultyItems, cargoStatus, pilotStatus, copilotStatus ]
+
+
+      formSubmission(document, pilot, copilot, fuelLevel, cargoMass);
 });
 
-//pickPlanet();
+  //validateInput(document);
+  
+
+
+});
+
                            
-validateInput();
+
 
 
 
