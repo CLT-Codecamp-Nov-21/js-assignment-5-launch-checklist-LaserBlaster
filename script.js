@@ -31,18 +31,18 @@ window.addEventListener("load", function() {
       event.preventDefault();
    
       
-      if(helperFunctions.validateInput(pilot.value) === "Empty" || helperFunctions.validateInput(copilot.value) === "Empty"  
-      || helperFunctions.validateInput(fuelLevel.value) === "Empty"  || helperFunctions.validateInput(cargoMass.value) === "Empty"  === "") {
+      if(validateInput(pilot.value) === "Empty" || validateInput(copilot.value) === "Empty"  
+      || validateInput(fuelLevel.value) === "Empty"  || validateInput(cargoMass.value) === "Empty"  === "") {
          alert("All fields are required!");
       }
       
-     if (helperFunctions.validateInput(pilot.value) === "Is a Number" || helperFunctions.validateInput(copilot.value) === "Is a Number"){
+     if (validateInput(pilot.value) === "Is a Number" || validateInput(copilot.value) === "Is a Number"){
         alert("Pilot & Co-pilot need to be human names, not integers!");
         event.preventDefault();
      }
 
      //validate cargo and fuel inputs
-      if (helperFunctions.validateInput(cargoMass.value) === "Not a Number" || helperFunctions.validateInput(fuelLevel.value) === "Not a Number") {
+      if (validateInput(cargoMass.value) === "Not a Number" || validateInput(fuelLevel.value) === "Not a Number") {
          alert("Enter a number in cargo mass and fuel level.");
       }
       
